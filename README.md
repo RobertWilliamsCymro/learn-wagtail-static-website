@@ -36,7 +36,7 @@ Set up virtual environment in project root directory
 - deactivate virtual env using `pyenv deactivate` cmd
 
 ### Course
-1. Install Wagtail Learnings
+#### 1. Install Wagtail Learnings
   - Create project directory repo in GitHub and `git clone` project to local drive
   - Set project python version in project root directory using `pyenv local <python version>`
   - Create virtual environment for project to install python dependencies in this root folder only using `pyenv activate <name>`
@@ -58,9 +58,9 @@ Set up virtual environment in project root directory
   - Create a `.gitignore` file and copy contents of `.dockerignore` file into it
   - remove `static` folder from `.gitignore` 
   - add your virtual environment name to `gitignore` file
-2. Visualise project
+#### 2. Visualise project
   - create a tree hierarchy for where each webpage will exist under Home page
-3. Setting up base project `app_name`
+#### 3. Setting up base project `app_name`
   - Inside default `home` app, there are pre-generated standard directories
     - migrations
     - static/css
@@ -164,7 +164,7 @@ Set up virtual environment in project root directory
 
         </body>
         ```
-4. Set up Global navigation component using Templatetag
+#### 4. Set up Global navigation component using Templatetag
   - want this on every page
   - In `app_name/templates` folder create
     - sub-folder `common`
@@ -208,7 +208,7 @@ Set up virtual environment in project root directory
       </div>
 
     - *REMEMBER*: any changes to `template` folder you must re-run `python manage.py runserver 0.0.0.0:<port>` cmd in terminal to pick up frontend changes
-5. Set up Global social media links
+#### 5. Set up Global social media links
   - want these on every page
   - 
 
