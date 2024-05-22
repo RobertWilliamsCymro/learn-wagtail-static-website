@@ -55,7 +55,7 @@ Set up virtual environment in project root directory
       - email (optional)
       - password (8 characters requested, can overide)
       - repeat password
-    - Go to `localhost:<port>` on oyur web browser and type user and password to access admin UI
+    - Go to `localhost:<port>` on your web browser and type user and password to access admin UI
   - Create a `.gitignore` file and copy contents of `.dockerignore` file into it
   - remove `static` folder from `.gitignore` 
   - add your virtual environment name to `gitignore` file
@@ -169,18 +169,18 @@ Set up virtual environment in project root directory
   - want this on every page
   - In `app_name/templates` folder create
     - sub-folder `common`
-      - add new file `navigation.html`
+      - create a  new file `navigation.html`
       - at top of `navigation.html` make sure to add `{% load static %}` for referencing any images or css from `app_name/static` directory in navigation html code
     - make sure`templates/base.html` file has within the `<body>` element
-      - a wrapper for `{% block navigation%} {% endblock navigation %}`
+      - a wrapper for `{% block navigation%} ... {% endblock navigation %}`
       - and inject into it `{% include 'common/navigation.html%}` to receive the navigation html code on the base page
         - *to over-write `navigation` on `base.html` simply add an empty `{% block navigation %} {% endblock navigation %}` wrapper on the `home/templates/home_page.html`*
   - In `home` app
-    - create a new directory `home/templatetags` alongside `home/templates`
+    - create a new directory `home/templatetags`
     - inside create new files
       - `__init__.py`
       - `navbar_tags.py`
-        - using standard `django` functions
+        - using standard `django` functions add
           ``` from django import template
               from wagtail.models import Page
 
@@ -189,11 +189,11 @@ Set up virtual environment in project root directory
               @register.simple_tag
               def get_navbar_pages():
                   return Page.objects.live().public().in_menu().filter(depth_gt=2)      ```
-       - now in the `{% load ... %}` block at the top of `app_name/templates/common/navgation.html`
-    - add file reference `navbar_tags` after `static` 
-    - immediately below it call in the simple_tag function
+    - now at the top of `app_name/templates/common/navigation.html` in the `{% load ... %}` block
+      - add file reference `navbar_tags` after `static` 
+    - immediately below `{% load ... %}` block call in the simple_tag function
       - `{% get_navbar_pages as navbar %}`
-      - create a list of navbar link items in html code and inject `{% for loop %}`to return all navbar list items 
+      - create a list of navbar link items in html code and inject `{% for loop %}` to return all navbar list items as part of `navigation.html`
       ```
       <div class="hidden lg:block">
         <ul class="flex items-center">
