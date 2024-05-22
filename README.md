@@ -41,7 +41,8 @@ Set up virtual environment in project root directory
   - Set project python version in project root directory using `pyenv local <python version>`
   - Create virtual environment for project to install python dependencies in this root folder only using `pyenv activate <name>`
   - Make sure virtual environment is active and run `pip install wagtail` to set up wagtail in this root directory
-  - To create an app run `wagtail start <app_name> .`
+  - To create an app 
+    - run `wagtail start <app_name> .`
     - the `.` makes sure the app is created at the root level
     - `wagtail start ...` command generates standard directories `home` and `search`, a `Dockerfile`, a `requirements.txt` file and a `manage.py` file as well as your `app_name` directory
     - Run `pip install -r requirements.txt` just to confirm django & wagtail installed correctly
