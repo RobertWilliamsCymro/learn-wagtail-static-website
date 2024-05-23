@@ -63,7 +63,8 @@ Set up virtual environment in project root directory
 - [Lesson 17 is](#17-clean-up-wagtail-website-codebase)
 
 
-
+<details>
+<summary> Install wagtail</summary>
 #### 1. Install Wagtail and create 'atlas' app
   - Create project directory repo in GitHub and `git clone` project to local drive
   - Set project python version in project root directory using `pyenv local <python version>`
@@ -89,6 +90,7 @@ Set up virtual environment in project root directory
   - add your virtual environment name to `gitignore` file
 
 [return to top](#course)
+</details>
 #### 2. Visualise project
   - create a tree hierarchy for where each webpage will exist under Home page
 #### 3. Setting up base project pages for app atlas
