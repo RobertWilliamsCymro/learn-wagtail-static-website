@@ -45,6 +45,10 @@ Set up virtual environment in project root directory
 ### Course
 
 - [Lesson 1 install wagtail with virtual environment](#1-install-wagtail-and-create-app_name)
+<details>
+<summary>1. Install summary<summary>
+  Provides instructions for setting up a 'atlas' project in Wagtail. It covers creating a GitHub repo, setting up a Python virtual environment, installing Wagtail, starting the app, and configuring the Wagtail admin UI.
+</details>
 - Lesson 2 n/a
 - [Lesson 3 Set up base.hmtl template](#3-setting-up-base-project-pages-for-app-atlas)
 - [Lesson 4 Global template tags for navigation, social media etc](#4-set-up-global-navigation-component-using-templatetag)
