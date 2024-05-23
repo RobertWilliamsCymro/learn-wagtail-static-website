@@ -36,7 +36,7 @@ Set up virtual environment in project root directory
 - deactivate virtual env using `pyenv deactivate` cmd
 
 ### Course
-#### 1. Install Wagtail Learnings
+#### 1. Install Wagtail
   - Create project directory repo in GitHub and `git clone` project to local drive
   - Set project python version in project root directory using `pyenv local <python version>`
   - Create virtual environment for project to install python dependencies in this root folder only using `pyenv activate <name>`
@@ -213,7 +213,7 @@ Set up virtual environment in project root directory
   - want these on every page, in footer
   - In `app_name/templates/common` folder
     - create a  new file `social_media.html`
-      - at top of `social_media.html` make sure to add `{% load static %}` for referencing any images or css from `app_name/static` directory in footer html code
+      - at top of `social_media.html` make sure to add `{% load static %}` for referencing any images or css from `app_name/static` directory in social media html code
       - wrap each social media html code link inside wagtail if statement `{% if settings.site_settings.SocialMediaLinks.<icon> %} ... {% endif %}`
     - make sure`app_name/templates/base.html` file has within the `<body>` element
       - a wrapper for `{% block social_media %} ... {% endblock social_media %}`
@@ -263,4 +263,6 @@ Set up virtual environment in project root directory
     - this adds the Social Media links as a class under the wagtail admin UI settings menu
       - in the `settings/Social media links` wgatail UI
         - add urls to the social media fields and save
-      - check links are working on `localhost:<port>`
+      - check links are working on basepage `localhost:<port>`
+#### 6. Custom Logo and Website name
+  - 
