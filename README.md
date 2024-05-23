@@ -42,7 +42,7 @@ Set up virtual environment in project root directory
 - personalise default home_page to your wagtail content
 
 
-### Course Summary
+### Course
 <details>
 <summary>1. & 2. Install summary</summary>
   Provides instructions for setting up a 'atlas' project in Wagtail. It covers creating a GitHub repo, setting up a Python virtual environment, installing Wagtail, starting the app, and configuring the Wagtail admin UI.
