@@ -37,20 +37,27 @@ Set up virtual environment in project root directory
 
 ### Course
 
-- Lessons 1 to 4 only manipulating existing default Wagtail
-  - No new model classes have been needed
-- Lesson 5 a new global model class is created in site_settings app
-- Lesson 6 is about manipulating Settings to add global info
-- Lesson 7 add pagination to blog listing page
+- [Lesson 1 install wagtail with virtual environment](#1-install-wagtail-and-create-app_name)
+- Lesson 2 n/a
+- [Lesson 3 Set up `base.hmtl` template](#3-setting-up-base-project-pages-for-app-atlas)
+- [Lesson 4 Global template tags for navigation, social media etc](#4-set-up-global-navigation-component-using-templatetag)
+- [Lesson 5 a new global model class is created in site_settings app](#5-set-up-global-social-media-links)
+- [Lesson 6 is about manipulating Settings to add global info](#6-custom-logo-and-website-name)
+- [Lesson 7 is converting the Home Page hero to serve wagtail content](#7-converting-homepage-hero-to-serve-wagtail-content)
+- [Lesson 8 is converting the Home Page body to serve wagtail content](#8-converting-homepage-body-to-serve-wagtail-content)
+- [Lesson 9 is](#9-start-a-companion-blog-app)
+- [Lesson 10 is](#10-child-pages-and-streamfield-intro)
+- [Lesson 11 is](#11-more-wagtail-streamfields)
 
 
-#### 1. Install Wagtail
+
+#### 1. Install Wagtail and create 'atlas' app
   - Create project directory repo in GitHub and `git clone` project to local drive
   - Set project python version in project root directory using `pyenv local <python version>`
-  - Create virtual environment for project to install python dependencies in this root folder only using `pyenv activate <name>`
+  - Create virtual environment for project to install python dependencies in this root folder only using `pyenv activate <name of environment>`
   - Make sure virtual environment is active and run `pip install wagtail` to set up wagtail in this root directory
   - To create an app 
-    - run `wagtail start <app_name> .`
+    - run `wagtail start atlas .`
     - the `.` makes sure the app is created at the root level
     - `wagtail start ...` command generates standard directories `home` and `search`, a `Dockerfile`, a `requirements.txt` file and a `manage.py` file as well as your `app_name` directory
     - Run `pip install -r requirements.txt` just to confirm django & wagtail installed correctly
@@ -67,9 +74,11 @@ Set up virtual environment in project root directory
   - Create a `.gitignore` file and copy contents of `.dockerignore` file into it
   - remove `static` folder from `.gitignore` 
   - add your virtual environment name to `gitignore` file
+
+[return to top](#course)
 #### 2. Visualise project
   - create a tree hierarchy for where each webpage will exist under Home page
-#### 3. Setting up base project `app_name`
+#### 3. Setting up base project pages for app atlas
   - Inside default `home` app, there are pre-generated standard directories
     - migrations
     - static/css
@@ -116,6 +125,9 @@ Set up virtual environment in project root directory
     - It is a standard `<!DOCTYPE html>` template with wagtail injections
       - at the top
         - `{% load static wagtailcore_tags wagtailuserbar %}`
+          - `static` loads static files
+          - `wagtailcore_tags` loads library of `templatetags` 
+          - `wagtailuserbar` loads tool for quick access to wagatil admin interface from site frontend
       - within the `<head>` element
         - as part of the `<title>` element
         - ```
@@ -173,6 +185,7 @@ Set up virtual environment in project root directory
 
         </body>
         ```
+[return to top](#course)
 #### 4. Set up Global navigation component using Templatetag
   - want this on every page
   - In `app_name/templates` folder create
@@ -217,6 +230,8 @@ Set up virtual environment in project root directory
       </div>
 
     - *REMEMBER*: any changes to `template` folder you must re-run `python manage.py runserver 0.0.0.0:<port>` cmd in terminal to pick up frontend changes
+
+[return to top](#course)
 #### 5. Set up Global social media links
   - want these on every page, in footer
   - In `app_name/templates/common` folder
@@ -272,6 +287,8 @@ Set up virtual environment in project root directory
       - in the `settings/Social media links` wgatail UI
         - add urls to the social media fields and save
       - check links are working on basepage `localhost:<port>`
+
+[return to top](#course)
 #### 6. Custom Logo and Website name
   - Want to apply a logo across all webpages in both the header (same level as navigation) and the footer (same level as social media)
   - Want to make it available under the `Settings` menu option in the wagtail admin UI
@@ -303,5 +320,65 @@ Set up virtual environment in project root directory
   - In `social_media.html`
     - repeat steps as above
 
-#### 7. Add pagination to Blog index page
-  - 
+[return to top](#course)
+#### 7. Converting HomePage 'hero' to serve wagtail content
+  - In app `home`, editing default `home_page` template and `models.py`
+    - In `home/models.py`
+      - in `HomePage(Page)` class
+        - class already inherits `title` field from `Page` model
+        - add `author_image` field as `models.ForeignKey(...)` and upload an image
+        - add `summary` field as `models.TextField(...)`
+        - add CTA button options (link to internal Page or external URL)
+          - `cta_text` as `models.CharField(max_length=50, blank=True)`
+          - `cta_page` as `models.ForeignKey("wagtailcore.Page", null=True, blank=True, ...)`
+          - `cta_url` as `models.URLField(blank=True)`
+          - add `@property` decorator and create function to choose from page or url
+            - ```
+              @property
+              def cta_link(self):
+                if self.cta_page:
+                  return self.cta_page.url (built in Page object method)
+                elif self.cta_url:
+                  return self.cta_url (use external link)
+                else:
+                  return None (no internal page and no URL set)
+        - add all fields to `content_panels` as `Page.content_panels + [FieldPanel("author_image"), FieldPanel("summary"), ....]` to be able to edit fields on Homepage in wagtail admin UI
+        - go into `Home` page and add info to fields
+          - change `title`
+          - upload `author_image`
+          - add `summary` info
+          - add CTA info
+            - add `cta_text`
+    - In [`home/templates/home_page.html`](home/templates/home/home_page.html) 
+      - within the `{% block content %} ... {% endblock content%}` wrapper set up your home page HTML code
+        - in `{% load static ... %}` add `wagtailimages_tags` library
+        - as `HomePage` model is by default available do not need to add as a template
+        - inject as wagtail code
+          - as `<div>` call in `author_image` as `{% image page.author_image fill-64x64 class="h-16 w-16" %}` with `fill` and class `h` and `w` to set image size boundaries
+          - as `<h1>` call in `{{ page.title }}` field
+          - as `<p>` call in `{{ page.summary}}` field
+          - for CTA, check it exists with `{% if page.cta_link %}` references `@property` decorator in model
+            - as `<a>` call in `{{ page.cta_link }}`
+        - for CTA text check it exists with `{% if page.cta_text %}`
+          - then call it in `{{ page.cta_text }}` 
+            - provide default CTA button text `{% else %} Read More &gt;&gt; {% endif %}` in frontend `home_page.html` template
+            - *OR* use `@property` decorator again in [`home/models.py`](home/models.py) to provide default string such as `Read More...` if `cta_text` field not filled in
+
+[return to top](#course)
+#### 8. Converting HomePage body to serve wagtail content
+ - 
+
+[return to top](#course)
+#### 9. Start a companion blog app
+
+
+[return to top](#course)
+#### 10. Child pages and StreamField intro
+
+
+[return to top](#course)
+#### 11. More wagtail streamfields
+
+
+[return to top](#course)
+
