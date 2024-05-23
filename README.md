@@ -35,6 +35,13 @@ Set up virtual environment in project root directory
 - start virtual env using `pyenv activate <venv_name>` cmd
 - deactivate virtual env using `pyenv deactivate` cmd
 
+### TL;DR Summary of Learnings
+- set up local environment and create new wagtail app from scratch
+- edit your app and set up base.html template page
+- set up global code blocks used on all webpages in their own settings models 
+- personalise default home_page to your wagtail content
+
+
 ### Course
 
 - [Lesson 1 install wagtail with virtual environment](#1-install-wagtail-and-create-app_name)
@@ -48,6 +55,12 @@ Set up virtual environment in project root directory
 - [Lesson 9 is](#9-start-a-companion-blog-app)
 - [Lesson 10 is](#10-child-pages-and-streamfield-intro)
 - [Lesson 11 is](#11-more-wagtail-streamfields)
+- [Lesson 12 is](#12-wagtail-snippets-and-repeating-objectsorderables)
+- [Lesson 13 is](#13-reusing-template-components-in-wagtail)
+- [Lesson 14 is](#14-add-pagination-in-wagtail)
+- [Lesson 15 is](#15-add-a-miscellaneous-page-type)
+- [Lesson 16 is](#16-wagtail-contact-pages-with-email)
+- [Lesson 17 is](#17-clean-up-wagtail-website-codebase)
 
 
 
@@ -365,20 +378,43 @@ Set up virtual environment in project root directory
             - *OR* use `@property` decorator again in [`home/models.py`](home/models.py) to provide default string such as `Read More...` if `cta_text` field not filled in
 
 [return to top](#course)
-#### 8. Converting HomePage body to serve wagtail content
+#### 8. Converting HomePage 'body' to serve wagtail content
  - 
 
 [return to top](#course)
-#### 9. Start a companion blog app
-
+#### 9. Start a new internal wagtail app (e.g.blog)
+  - create a new wagtail app and bring other content into template 
 
 [return to top](#course)
 #### 10. Child pages and StreamField intro
+  - create child pages and customisable mix 'n' match content fields called StreamFields
+
+[return to top](#course)
+#### 11. Simple wagtail streamfields
+  - use StreamFields for dynamic mix 'n' match content in your wagtail pages
+
+[return to top](#course)
+#### 12. Wagtail snippets and repeating objects(Orderables)
+  - Snippet in wagtail is a reusable data object
+  - Can select multiple snippets in a wagtail page (repeating objects)
 
 
 [return to top](#course)
-#### 11. More wagtail streamfields
-
+#### 13. Reusing Template components in wagtail
+  - reuse template components in your wagtail website
 
 [return to top](#course)
+#### 14. Add pagination in wagtail
+  - add pagination in your wagtail project
 
+[return to top](#course)
+#### 15. Add a miscellaneous page type
+  - add a miscellaneous page for a wide range of uses
+
+[return to top](#course)
+#### 16. Wagtail contact pages (with email)
+  - add a Contact Page that can send emails when filled out
+
+[return to top](#course)
+#### 17. Clean up wagtail website codebase
+  - Learn which files can be deleted safely
