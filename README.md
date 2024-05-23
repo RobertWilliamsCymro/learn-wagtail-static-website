@@ -46,7 +46,7 @@ Set up virtual environment in project root directory
 
 - [Lesson 1 install wagtail with virtual environment](#1-install-wagtail-and-create-app_name)
 - Lesson 2 n/a
-- [Lesson 3 Set up `base.hmtl` template](#3-setting-up-base-project-pages-for-app-atlas)
+- [Lesson 3 Set up base.hmtl template](#3-setting-up-base-project-pages-for-app-atlas)
 - [Lesson 4 Global template tags for navigation, social media etc](#4-set-up-global-navigation-component-using-templatetag)
 - [Lesson 5 a new global model class is created in site_settings app](#5-set-up-global-social-media-links)
 - [Lesson 6 is about manipulating Settings to add global info](#6-custom-logo-and-website-name)
@@ -418,3 +418,6 @@ Set up virtual environment in project root directory
 [return to top](#course)
 #### 17. Clean up wagtail website codebase
   - Learn which files can be deleted safely
+
+
+[return to top](#course)
