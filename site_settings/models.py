@@ -15,3 +15,17 @@ class SocialMediaLinks(BaseGenericSetting):
         FieldPanel("facebook"),
         FieldPanel("linkedin"),
     ]
+
+@register_setting
+class LogoSettings(BaseGenericSetting):
+    logo = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+",
+    )
+
+    panels = [
+        FieldPanel("logo"),
+    ]
