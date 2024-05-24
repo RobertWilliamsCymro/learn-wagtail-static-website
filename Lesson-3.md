@@ -9,7 +9,7 @@
     - as well as standard files
       - `__init__.py`
       - `models.py`
-  - In `home_page.html` (layer zero: 0) edit code to remove all the existing code except for:
+  - In `home_page.html` (layer one: 1) edit code to remove all the existing code except for:
     ```   
     {% extends "base.html" %}
     {% load static %}
@@ -18,10 +18,10 @@
       Hello World - temporary placeholder for homepage content
     {% endblock content %} 
     ```
-    - this will allow the `app_name/templates/base.html` page to become the wagtail UI `home` page
+    - this will allow the `atlas/templates/base.html` page to become the wagtail UI `home` page
 
-  - Inside `app_name` folder will be pre-generated standard directories
-  - `app_name`
+  - Inside `atlas` folder will be pre-generated standard directories
+  - `atlas`
     - `settings`
       - `__init.py__`
       - `base.py`
@@ -29,9 +29,9 @@
       - `production.py`
     - `static`
       - `css`
-        - `app_name.css` (empty file)
+        - `atlas.css` (empty file)
       - `js`
-        - `app_name.js` (empty file)
+        - `atlas.js` (empty file)
     - `templates`
       - `404.html`
       - `500.html`
@@ -41,7 +41,7 @@
       - `urls.py`
       - `wsgi.py`
 
-  - File `templates/base.html` is the base layer (layer one: 1)page of each webpage and will be reference loading place for components needed on every page
+  - File `templates/base.html` is the base layer (layer zero: 0) page of each webpage and will be reference loading place for components needed on every page
     - It is a standard `<!DOCTYPE html>` template with wagtail injections
       - at the top
         - `{% load static wagtailcore_tags wagtailuserbar %}`
@@ -56,12 +56,12 @@
             <title>
               {% block title %}
                 ....
-              {% endblock %}
+              {% endblock title %}
             </title>
             ....
           </head>
           ```      
-      - within the link to `.css` stylesheets stored in `app_name/static` directory
+      - within the link to `.css` stylesheets stored in `atlas/static` directory
         - `<link crossorigin="anonymous" href="{% static 'styles/main.css' %}" media="screen" rel="stylesheet"/>`
       - within the `<body>` element
         - insert `{% wagtailuserbar %}` at top
@@ -82,13 +82,9 @@
                 {% include 'common/navigation.html' %}
               {% endblock navigation %}
           
-              {% block hero_content %}
-                {% include 'common/hero.html' %}
-              {% endblock hero_content %}
+              {% block content %}
 
-              {% block main_content %}
-                {% include 'common/main.html' %}
-              {% endblock main_content %}
+              {% endblock content %}
 
             <!-- Footer -->
               <div>

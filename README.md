@@ -36,10 +36,12 @@ Set up virtual environment in project root directory
 - deactivate virtual env using `pyenv deactivate` cmd
 
 ### TL;DR Summary of Learnings
-- set up local environment and create new wagtail app from scratch
-- edit your app and set up base.html template page
-- set up global code blocks used on all webpages in their own settings models 
-- personalise default home_page to your wagtail content
+- set up local environment and create new wagtail app `atlas` from scratch
+- edit *atlas* app by modifying `templates/base.html` template page
+- copy paste HTML and tailwind code for homepage into *home* app  `templates/home/home_page.html` with hard coded content
+- create new *site_settings* app and register code blocks in `site_settings/models.py` to be served on all webpages from `atlas/templates/base.html`
+- personalise wagtail default home_page to your wagtail content and inject into `home/../home_page.html` template
+- create new *blog* app and set up 
 
 
 ### Course
@@ -51,35 +53,35 @@ Set up virtual environment in project root directory
 
 3. Set up base.html summary
 
-  Details the structure of a Wagtail project, highlighting the 'home' and 'app_name' directories. It explains how to modify 'home_page.html' to set 'base.html' as the Wagtail UI home page. It also describes the structure and functionality of 'base.html', including how to load static files, templatetags, and the Wagtail admin interface.
+  Details the structure of a Wagtail project, highlighting the 'home' and 'app_name' directories. It explains how to modify 'home_page.html' which extends 'base.html' as the Wagtail UI home page. It also describes the structure and functionality of 'base.html', including how to load static files, templatetags, and the Wagtail admin interface.
 
 [Go to Lesson 3 learnings](Lesson-3.md)
 
 4. Global template tags summary
 
-  Provides instructions for creating a reusable navigation bar in a Wagtail project. It involves creating a 'navigation.html' file, setting up a Django template tag to fetch navigation pages, and integrating this navigation bar into the base template. Changes require server restart.
+  Provides instructions for creating a reusable navigation bar in a Wagtail project. It involves creating a 'navigation.html' file, setting up a Django template tag to fetch navigation pages, and integrating this navigation bar into the `base.html` template. Changes require server restart.
   
 [Go to Lesson 4 learnings](Lesson-4.md)
 
 5. New global class summary
 
-  Provides instructions for adding social media links to the footer of every page in a Wagtail project. It involves creating a 'social_media.html' file, setting up a new Django app 'site_settings' for managing social media links, and integrating these links into the base template. Changes require database migrations and server restart.
+  Provides instructions for adding social media links to the footer of every page in a Wagtail project. It involves creating a 'social_media.html' file, setting up a new Django app 'site_settings' for managing social media links, and integrating these links into the `base.html` template. Changes require database migrations and server restart.
 
 [Go to Lesson 5 learnings](#5-set-up-global-social-media-links)
 
-6. Using settings app summary
+6. Creating site_settings app summary
 
-  Provides instructions for adding a logo and website name to the header and footer of every page in a Wagtail project. It involves creating a 'LogoSettings' model, setting up the logo and site name in the Wagtail admin UI, and integrating these elements into the navigation and social media templates. Changes require database migrations.
+  Provides instructions for adding a logo and website name to the header and footer of every page in a Wagtail project. It involves creating a 'LogoSettings' model, setting up the logo and site name in the Wagtail admin UI, and integrating these elements into the `navigation.html` and `social_media.html` templates. Changes require database migrations.
 
 [Go to Lesson 6 learnings](#6-custom-logo-and-website-name)
 
-7. Create Homepage Hero summary
+7. Create homepage hero summary
 
 Provides instructions for customizing the homepage in a Wagtail project. It involves modifying the `HomePage` model in `home/models.py` to include an author image, summary, and CTA button. These elements are then integrated into the `home_page.html` template using Wagtail's template tags. Changes require database migrations.
 
 [Go to Lesson 7 learnings](Lesson-7.md)
 
-8. Create Homepage Content summary
+8. Create homepage content summary
 
 Provides instructions for enhancing the homepage in a Wagtail project. It involves adding 'My Story' and 'Blog Posts' sections to the `HomePage` model and template. The 'My Story' section uses static fields, while the 'Blog Posts' section dynamically pulls from the `BlogPage` model. Changes require database migrations.
 
