@@ -48,7 +48,7 @@ Set up virtual environment in project root directory
   Provides instructions for setting up a 'atlas' project in Wagtail. It covers creating a GitHub repo, setting up a Python virtual environment, installing Wagtail, starting the app, and configuring the Wagtail admin UI.
 </details>
 
-[Lesson 1 & 2 install wagtail with virtual environment](#1-install-wagtail-and-create-app_name)
+[Lesson 1 & 2 install wagtail with virtual environment](Lesson-1-&-2.md)
 <details>
 <summary>3. Set up base.html summary</summary>
   Details the structure of a Wagtail project, highlighting the 'home' and 'app_name' directories. It explains how to modify 'home_page.html' to set 'base.html' as the Wagtail UI home page. It also describes the structure and functionality of 'base.html', including how to load static files, templatetags, and the Wagtail admin interface.
@@ -142,33 +142,7 @@ Provides instructions for customizing the homepage in a Wagtail project. It invo
 
 ### Detailed description
 
-#### 1. Install Wagtail and create 'atlas' app
-  - Create project directory repo in GitHub and `git clone` project to local drive
-  - Set project python version in project root directory using `pyenv local <python version>`
-  - Create virtual environment for project to install python dependencies in this root folder only using `pyenv activate <name of environment>`
-  - Make sure virtual environment is active and run `pip install wagtail` to set up wagtail in this root directory
-  - To create an app 
-    - run `wagtail start atlas .`
-    - the `.` makes sure the app is created at the root level
-    - `wagtail start ...` command generates standard directories `home` and `search`, a `Dockerfile`, a `requirements.txt` file and a `manage.py` file as well as your `app_name` directory
-    - Run `pip install -r requirements.txt` just to confirm django & wagtail installed correctly
-    - Start server by opening a terminal and run `python manage.py runserver 0.0.0.0:<port>` 
-      - default port is `8000`, but if you have other apps using that choose another port e.g. `8001`, `8002` etc
-      - You will have a number of unapplied migrations which will need to run to provision the database
-    - Open a 2nd terminal and run `python manage.py migrate` to install all the migrations on the server
-    - Run `python manage.py createsuperuser` to create a login user for wagtail admin UI
-      - name
-      - email (optional)
-      - password (8 characters requested, can overide)
-      - repeat password
-    - Go to `localhost:<port>` on your web browser and type user and password to access admin UI
-  - Create a `.gitignore` file and copy contents of `.dockerignore` file into it
-  - remove `static` folder from `.gitignore` 
-  - add your virtual environment name to `gitignore` file
 
-[return to top](#course)
-#### 2. Visualise project
-  - create a tree hierarchy for where each webpage will exist under Home page
 #### 3. Setting up base project pages for app atlas
   - Inside default `home` app, there are pre-generated standard directories
     - migrations
@@ -452,8 +426,8 @@ Provides instructions for customizing the homepage in a Wagtail project. It invo
             - as `<a>` call in `{{ page.cta_link }}`
         - for CTA text check it exists with `{% if page.cta_text %}`
           - then call it in `{{ page.cta_text }}` 
-            - provide default CTA button text `{% else %} Read More &gt;&gt; {% endif %}` in frontend `home_page.html` template
-            - *OR* use `@property` decorator again in [`home/models.py`](home/models.py) to provide default string such as `Read More...` if `cta_text` field not filled in
+            - wrap in default CTA button text `{% else %} Read More &gt;&gt; {% endif %}` in frontend [`home_page.html`](home/templates/home/home_page.html) template
+            - *OR* use `@property` decorator again  to provide default string such as `Read More...` if `cta_text` field not filled in for [`home/models.py`](home/models.py)
 
 [return to top](#course)
 #### 8. Converting HomePage 'body' to serve wagtail content
