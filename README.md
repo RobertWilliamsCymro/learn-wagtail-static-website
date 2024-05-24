@@ -52,7 +52,7 @@ Set up virtual environment in project root directory
   Details the structure of a Wagtail project, highlighting the 'home' and 'app_name' directories. It explains how to modify 'home_page.html' to set 'base.html' as the Wagtail UI home page. It also describes the structure and functionality of 'base.html', including how to load static files, templatetags, and the Wagtail admin interface.
 
 [Go to Lesson 3 learnings](Lesson-3.md)
-<
+
 4. Global template tags summary
   Provides instructions for creating a reusable navigation bar in a Wagtail project. It involves creating a 'navigation.html' file, setting up a Django template tag to fetch navigation pages, and integrating this navigation bar into the base template. Changes require server restart.
   
