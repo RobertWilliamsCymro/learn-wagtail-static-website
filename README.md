@@ -73,13 +73,13 @@ Set up virtual environment in project root directory
 
 [Go to Lesson 6 learnings](#6-custom-logo-and-website-name)
 
-7. Create Homepage Hero
+7. Create Homepage Hero summary
 
 Provides instructions for customizing the homepage in a Wagtail project. It involves modifying the `HomePage` model in `home/models.py` to include an author image, summary, and CTA button. These elements are then integrated into the `home_page.html` template using Wagtail's template tags. Changes require database migrations.
 
 [Go to Lesson 7 learnings](Lesson-7.md)
 
-8. Create Homepage Content
+8. Create Homepage Content summary
 
 
 [Go to Lesson 8 learnings](Lesson-8.md)

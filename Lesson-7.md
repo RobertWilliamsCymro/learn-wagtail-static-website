@@ -19,13 +19,16 @@
                   return self.cta_url (use external link)
                 else:
                   return None (no internal page and no URL set)
-        - add all fields to `content_panels` as `Page.content_panels + [FieldPanel("author_image"), FieldPanel("summary"), ....]` to be able to edit fields on Homepage in wagtail admin UI
-        - go into `Home` page and add info to fields
-          - change `title`
-          - upload `author_image`
-          - add `summary` info
-          - add CTA info
-            - add `cta_text`
+        - add all fields to `content_panels` as `Page.content_panels + [FieldPanel("author_image"), FieldPanel("summary"), ....]` to edit in wagtail admin UI
+      - to add the model changes to the database run
+        - `python manage.py make migrations`
+        - `python manage.py migrate`
+      - go into `Home` page and add info to fields
+        - change `title`
+        - upload `author_image`
+        - add `summary` info
+        - add CTA info
+          - add `cta_text`
     - In [`home/templates/home_page.html`](home/templates/home/home_page.html) 
       - within the `{% block content %} ... {% endblock content%}` wrapper set up your home page HTML code
         - in `{% load static ... %}` add `wagtailimages_tags` library
