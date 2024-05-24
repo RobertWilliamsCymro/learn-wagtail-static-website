@@ -43,99 +43,85 @@ Set up virtual environment in project root directory
 
 
 ### Course
-<details>
-<summary>1. & 2. Install summary</summary>
+1. & 2. Install summary
   Provides instructions for setting up a 'atlas' project in Wagtail. It covers creating a GitHub repo, setting up a Python virtual environment, installing Wagtail, starting the app, and configuring the Wagtail admin UI.
-</details>
 
 [Go to Lessons 1 & 2 learnings](Lesson-1-&-2.md)
-<details>
-<summary>3. Set up base.html summary</summary>
+
+3. Set up base.html summary
   Details the structure of a Wagtail project, highlighting the 'home' and 'app_name' directories. It explains how to modify 'home_page.html' to set 'base.html' as the Wagtail UI home page. It also describes the structure and functionality of 'base.html', including how to load static files, templatetags, and the Wagtail admin interface.
-</details>
 
 [Go to Lesson 3 learnings](Lesson-3.md)
-<details>
-<summary>4. Global template tags summary</summary>
+<
+4. Global template tags summary
   Provides instructions for creating a reusable navigation bar in a Wagtail project. It involves creating a 'navigation.html' file, setting up a Django template tag to fetch navigation pages, and integrating this navigation bar into the base template. Changes require server restart.
-</details>
-
+  
 [Go to Lesson 4 learnings](Lesson-4.md)
-<details>
-<summary>5. New global class summary</summary>
+
+5. New global class summary
   Provides instructions for adding social media links to the footer of every page in a Wagtail project. It involves creating a 'social_media.html' file, setting up a new Django app 'site_settings' for managing social media links, and integrating these links into the base template. Changes require database migrations and server restart.
-</details>
 
 [Go to Lesson 5 learnings](#5-set-up-global-social-media-links)
-<details>
-<summary>6. Using settings app summary</summary>
+
+6. Using settings app summary
   Provides instructions for adding a logo and website name to the header and footer of every page in a Wagtail project. It involves creating a 'LogoSettings' model, setting up the logo and site name in the Wagtail admin UI, and integrating these elements into the navigation and social media templates. Changes require database migrations.
-</details>
 
 [Go to Lesson 6 learnings](#6-custom-logo-and-website-name)
-<details>
-<summary>7. Create Homepage Hero</summary>
+
+7. Create Homepage Hero
 Provides instructions for customizing the homepage in a Wagtail project. It involves modifying the `HomePage` model in `home/models.py` to include an author image, summary, and CTA button. These elements are then integrated into the `home_page.html` template using Wagtail's template tags. Changes require database migrations.
-</details>
 
 [Go to Lesson 7 learnings](Lesson-7.md)
-<details>
-<summary>8. ***</summary>
 
-</details>
+8. Create Homepage Content
+
 
 [Go to Lesson 8 learnings](Lesson-8.md)
-<details>
-<summary>9. ***</summary>
 
-</details>
+9. 
+
 
 [Go to Lesson 9 learnings](Lesson-9.md)
-<details>
-<summary>10. ***</summary>
 
-</details>
+10. 
+
 
 [Go to Lesson 10 learnings](Lesson-10.md)
-<details>
-<summary>11. ***</summary>
 
-</details>
+11. 
+
+
 
 [Go to Lesson 11 learnings](Lesson-11.md)
-<details>
-<summary>12. ***</summary>
 
-</details>
+12. 
+
 
 [Go to Lesson 12 learnings](Lesson-12.md)
-<details>
-<summary>13. ***</summary>
 
-</details>
+13. 
+
 
 [Go to Lesson 13 learnings](Lesson-13.md)
-<details>
-<summary>14. ***</summary>
 
-</details>
+14. 
+
+
+
 
 [Go to Lesson 14 learnings](Lesson-14.md)
-<details>
-<summary>15. ***</summary>
 
-</details>
+15. 
+
 
 [Go to Lesson 15 learnings](Lesson-15.md)
-<details>
-<summary>16. ***</summary>
 
-</details>
+16. 
+
 
 [Go to Lesson 16 learnings](Lesson-16.md)
-<details>
-<summary>17. ***</summary>
 
-</details>
+17. 
+
 
 [Go to Lesson 17 learnings](Lesson-17.md)
