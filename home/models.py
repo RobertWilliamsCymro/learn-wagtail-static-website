@@ -4,6 +4,7 @@ from wagtail.models import Page
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 
 class HomePage(Page):
+    max_count = 1
     author_image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,

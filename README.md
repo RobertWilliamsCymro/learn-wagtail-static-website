@@ -53,7 +53,7 @@ Set up virtual environment in project root directory
 
 3. Set up base.html summary
 
-  Details the structure of a Wagtail project, highlighting the 'home' and 'app_name' directories. It explains how to modify 'home_page.html' which extends 'base.html' as the Wagtail UI home page. It also describes the structure and functionality of 'base.html', including how to load static files, templatetags, and the Wagtail admin interface.
+  Details the structure of a Wagtail project, highlighting the 'home' and 'atlas' directories. It explains how to modify 'home_page.html' which extends 'base.html' as the Wagtail UI home page. It also describes the structure and functionality of 'base.html', including how to load static files, templatetags, and the Wagtail admin interface.
 
 [Go to Lesson 3 learnings](Lesson-3.md)
 
