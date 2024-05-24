@@ -81,10 +81,13 @@ Provides instructions for customizing the homepage in a Wagtail project. It invo
 
 8. Create Homepage Content summary
 
+Provides instructions for enhancing the homepage in a Wagtail project. It involves adding 'My Story' and 'Blog Posts' sections to the `HomePage` model and template. The 'My Story' section uses static fields, while the 'Blog Posts' section dynamically pulls from the `BlogPage` model. Changes require database migrations.
 
 [Go to Lesson 8 learnings](Lesson-8.md)
 
-9. 
+9. Creating blog app summary
+
+Provides instructions for
 
 
 [Go to Lesson 9 learnings](Lesson-9.md)
