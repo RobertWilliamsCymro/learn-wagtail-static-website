@@ -89,12 +89,13 @@ Provides instructions for enhancing the homepage in a Wagtail project. It involv
 
 9. Creating blog app summary
 
-Provides instructions for
-
+Provides instructions to create a new Wagtail app called 'blog'. It includes creating the app, defining a `BlogIndexPage` model, making database migrations, and setting up the frontend with a `blog_index_page.html` template. It also explains how to link to the Blog Index page from the HomePage.
 
 [Go to Lesson 9 learnings](Lesson-9.md)
 
-10. 
+10. Creating child pages and using StreamFields
+
+Provides instructions on ...
 
 
 [Go to Lesson 10 learnings](Lesson-10.md)

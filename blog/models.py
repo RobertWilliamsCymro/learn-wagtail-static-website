@@ -18,3 +18,8 @@ class BlogIndexPage(Page):
         FieldPanel('summary'),
         FieldPanel('suscribe_url'),
     ]
+
+    def get_context(self, request):
+        context = super().get_context(request)
+        # context['posts'] = BlogPage.objects.live().public().order_by('-first_published_at')
+        return context
