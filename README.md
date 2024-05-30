@@ -37,11 +37,11 @@ Set up virtual environment in project root directory
 
 ### TL;DR Summary of Learnings
 - set up local environment and create new wagtail app `atlas` from scratch
-- edit *atlas* app by modifying `templates/base.html` template page
+- edit `atlas` app by modifying `templates/base.html` template page
 - copy paste HTML and tailwind code for homepage into *home* app  `templates/home/home_page.html` with hard coded content
-- create new *site_settings* app and register code blocks in `site_settings/models.py` to be served on all webpages from `atlas/templates/base.html`
+- create new `site_settings` app and register code blocks in `site_settings/models.py` to be served on all webpages from `atlas/templates/base.html`
 - personalise wagtail default home_page to your wagtail content and inject into `home/../home_page.html` template
-- create new *blog* app and set up `blog index` page, `blog` page and use a StreamField and StructBlock to mix and match content types in the body
+- create new `blog` app and set up `blog index` page, `blog` page and use a StreamField and StructBlock to mix and match content types in the body
 - how to create and use snippets on pages
 
 
@@ -100,42 +100,38 @@ Provides instructions for creating a child page in Wagtail, defining a new `Blog
 
 [Go to Lesson 10 & 11 learnings](Lesson-10-&-11.md)
 
+12. Creating Snippets and repeating objects (Orderables)
 
-
-
-
-
-
-[Go to Lesson 11 learnings](Lesson-11.md)
-
-12. 
-
+Provides instructions for creating a `category` label for blog posts in Wagtail. It guides on creating a reusable `BlogCategory` snippet, an `Orderable` model `BlogPageCategory`, linking them to the `BlogPage`, and displaying the categories in the blog page template.
 
 [Go to Lesson 12 learnings](Lesson-12.md)
 
-13. 
+13. Reusing Template components
 
+Provides ....
 
 [Go to Lesson 13 learnings](Lesson-13.md)
 
-14. 
+14. Adding pagination
 
-
-
+Provides ....
 
 [Go to Lesson 14 learnings](Lesson-14.md)
 
-15. 
+15. Adding a miscellaneous page type
 
+Provides ...
 
 [Go to Lesson 15 learnings](Lesson-15.md)
 
-16. 
+16. Add a Contact page with email capabilities
 
+Provides ...
 
 [Go to Lesson 16 learnings](Lesson-16.md)
 
-17. 
+17. Clean up code base
 
+Provides instruction on how to safely delete unnecessary files from project
 
 [Go to Lesson 17 learnings](Lesson-17.md)
