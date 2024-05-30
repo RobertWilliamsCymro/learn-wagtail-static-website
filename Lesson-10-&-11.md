@@ -28,9 +28,13 @@
       - below that put `{% load static %}` to give access to any images in static folder
       - add a `{% block content %} ... {% endblock content %}` wrapper and copy/paste the static `.html` code into it
       - edit the static html code to replace hard coded text with wagtail fields
-      - for the StreamField content add wrapper
-        - {% include_block page.body %}
-        - create `.html` block component template files for each of the StreamField types eg `richtext.html` etc
-        - add the specific html and tailwind code to the component and inject wagtail code `{{ self }}` which will pick up data on that StreamField block type from the page the StreamField is on
+
+
+## 11. Continue to build wagtail StreamField template
+  - use StreamField to add dynamic mix 'n' match content in your page body
+    - for the StreamField content add wrapper
+    - `{% include_block page.body %}`
+      - in `atlas/templates/blocks` create `.html` block component template files eg `richtext.html`, `image.html` etc
+      - add any specific html and tailwind code to that component and inject wagtail code `{{ self }}` to use data from StreamField block type
 
 [return to README](README.md#course)

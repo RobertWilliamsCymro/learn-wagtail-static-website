@@ -1,0 +1,8 @@
+{% load wagtailimages_tags %}
+
+{% comment %} could put all tailwind classes in image code injection {% endcomment %}
+{% comment %} {% image self fill-800x440 class="w-full h-auto my-2 rounded-lg" %} {% endcomment %}
+{% comment %} OR.... {% endcomment %}
+{% image self fill-800x440 as img %} 
+
+<img src="{{ img.url }}" alt="" class="w-full h-full my-2" style="border-radius: 1em" />

@@ -41,7 +41,8 @@ Set up virtual environment in project root directory
 - copy paste HTML and tailwind code for homepage into *home* app  `templates/home/home_page.html` with hard coded content
 - create new *site_settings* app and register code blocks in `site_settings/models.py` to be served on all webpages from `atlas/templates/base.html`
 - personalise wagtail default home_page to your wagtail content and inject into `home/../home_page.html` template
-- create new *blog* app and set up 
+- create new *blog* app and set up `blog index` page, `blog` page and use a StreamField and StructBlock to mix and match content types in the body
+- how to create and use snippets on pages
 
 
 ### Course
@@ -93,14 +94,15 @@ Provides instructions to create a new Wagtail app called 'blog'. It includes cre
 
 [Go to Lesson 9 learnings](Lesson-9.md)
 
-10. Creating child pages and using StreamFields
+10. & 11. Creating child pages and using StreamFields
 
-Provides instructions on ...
+Provides instructions for creating a child page in Wagtail, defining a new `BlogPage` model with various fields including a `StreamField`. It also guides on how to create a new template file for the blog page, and how to use Wagtail fields and StreamField in the template.
+
+[Go to Lesson 10 & 11 learnings](Lesson-10-&-11.md)
 
 
-[Go to Lesson 10 learnings](Lesson-10.md)
 
-11. 
+
 
 
 
