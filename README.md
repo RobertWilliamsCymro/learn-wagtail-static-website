@@ -42,8 +42,12 @@ Set up virtual environment in project root directory
 - create new `site_settings` app and register code blocks in `site_settings/models.py` to be served on all webpages from `atlas/templates/base.html`
 - personalise wagtail default home_page to your wagtail content and inject into `home/../home_page.html` template
 - create new `blog` app and set up `blog index` page, `blog` page and use a StreamField and StructBlock to mix and match content types in the body
-- how to create and use snippets on pages
-
+- create and use Snippets on pages and use Orderables
+- reuse Template components across pages
+- add Pagination
+- create a Miscellaneous page type
+- add Contact page with email capabilities
+- delete unnecessary files
 
 ### Course
 1. & 2. Install summary
@@ -108,7 +112,7 @@ Provides instructions for creating a `category` label for blog posts in Wagtail.
 
 13. Reusing Template components
 
-Provides ....
+Provides instructions for reusing a blog preview component in a Wagtail website. It involves modifying the `get_context` function in `blog/models.py` and `home/models.py`, adding for loops in the respective templates, and creating a new template component `blog_preview.html` in `atlas/templates/common/`.
 
 [Go to Lesson 13 learnings](Lesson-13.md)
 
