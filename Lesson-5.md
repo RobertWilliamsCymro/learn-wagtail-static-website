@@ -7,6 +7,7 @@
     - make sure`app_name/templates/base.html` file has within the `<body>` element
       - a wrapper for `{% block social_media %} ... {% endblock social_media %}`
       - and inject into it `{% include 'common/social_media.html%}` to receive the footer html code on the base page
+      
   - Now we will create a new functional app called `site_settings` for `app_name` to use for social media and other settings
     - in terminal run `python manage.py startapp site_settings`
       - a new folder appears alongside

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block content %}
+<div class="py-16 lg:py-20">
+    <div>
+        <img src="{% static 'img/icon-uses.png' %}" alt="icon uses" />
+    </div>
+    {% comment %} title {% endcomment %}
+    <h1 class="pt-5 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl">
+        {{ page.title }}
+    </h1>
+    {% comment %} raw html from wagtail {% endcomment %}
+    <div class="pr-2 pt-3">
+        {{ page.html_subtitle|safe }}
+    </div>
+    {% comment %} body {% endcomment %}
+    <div class="pt-16 lg:pt-20">
+        <div class="richtext prose text-lg font-light" >
+            {% include_block page.body %}
+        </div>
+    </div>
+</div>
+{% endblock %}

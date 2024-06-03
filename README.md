@@ -171,7 +171,7 @@ in `blog/templates/blog/blog_page.html`
 
 6. Creating site_settings app summary
 
-  Provides instructions for adding a logo and website name to the header and footer of every page in a Wagtail project. It involves creating a 'LogoSettings' model, setting up the logo and site name in the Wagtail admin UI, and integrating these elements into the `navigation.html` and `social_media.html` templates. Changes require database migrations.
+  Provides instructions to create a new Wagtail app called `site_settings`. This allows you to add a logo and website name to the header and footer of every page in a Wagtail project. It involves creating in `models.py` both `SocialMediaLinks` and `LogoSettings` classes, setting up the logo and site name in the Wagtail admin UI, and integrating these elements into the`atlas/templates/common` folder as `navigation.html` and `social_media.html` templates. Changes require database migrations.
 
 [Go to Lesson 6 learnings](#6-custom-logo-and-website-name)
 
@@ -219,7 +219,7 @@ Provides instructions on how to add pagination to blog index page in a Wagtail p
 
 15. Adding a miscellaneous page type
 
-Provides ...
+Provides instructions to create a new Wagtail app called 'misc'. This outlines the steps to create a miscellaneous page in a Wagtail app. It involves creating a new app 'misc', updating `atlas/settings`, defining a new model with specific fields, and creating a template for the page. The template includes static content, page title, subtitle, and body.
 
 [Go to Lesson 15 learnings](Lesson-15.md)
 
