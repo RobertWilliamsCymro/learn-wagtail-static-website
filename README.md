@@ -213,7 +213,7 @@ Provides instructions for reusing a blog preview component in a Wagtail website.
 
 14. Adding pagination
 
-Provides ....
+Provides instructions on how to add pagination to blog index page in a Wagtail project. It involves modifying the `BlogIndexPage` model in `blog/models.py` and the blog listing page template in `blog/templates/blog/blog_index_page.html`. The instructions detail how to implement and style the pagination.
 
 [Go to Lesson 14 learnings](Lesson-14.md)
 
