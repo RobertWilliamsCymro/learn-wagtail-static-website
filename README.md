@@ -189,7 +189,7 @@ Provides instructions for enhancing the homepage in a Wagtail project. It involv
 
 9. Creating blog app summary
 
-Provides instructions to create a new Wagtail app called 'blog'. It includes creating the app, defining a `BlogIndexPage` model, making database migrations, and setting up the frontend with a `blog_index_page.html` template. It also explains how to link to the Blog Index page from the HomePage.
+Provides instructions to create a new Wagtail app called 'blog'. It includes creating the app, defining a `BlogIndexPage` model, limiting the `max_count=1`, making database migrations, and setting up the frontend with a `blog_index_page.html` template. It also explains how to link to the Blog Index page from the HomePage.
 
 [Go to Lesson 9 learnings](Lesson-9.md)
 
@@ -219,7 +219,7 @@ Provides instructions on how to add pagination to blog index page in a Wagtail p
 
 15. Adding a miscellaneous page type
 
-Provides instructions to create a new Wagtail app called 'misc'. This outlines the steps to create a miscellaneous page in a Wagtail app. It involves creating a new app 'misc', updating `atlas/settings`, defining a new model with specific fields, and creating a template for the page. The template includes static content, page title, subtitle, and body.
+Provides instructions to create a new Wagtail app called `misc` and update `atlas/settings`to includde it. It defines a new model `MiscPage(Page)` with specific fields, and creates an `misc_page.html` template for the model. The template includes `static` content, default `page title` and custom `html_subtitle` and `body` fields.
 
 [Go to Lesson 15 learnings](Lesson-15.md)
 
