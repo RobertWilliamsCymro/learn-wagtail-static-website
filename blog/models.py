@@ -1,13 +1,13 @@
 from django.db import models
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+
 from wagtail.models import Page, Orderable
-
 from wagtail.admin.panels import FieldPanel, InlinePanel
-
 from wagtail.fields import StreamField
 from wagtail import blocks
 from wagtail.images.blocks import ImageChooserBlock
-
 from wagtail.snippets.models import register_snippet
+
 from modelcluster.fields import ParentalKey
 
 # Create your models here.
@@ -93,7 +93,21 @@ class BlogIndexPage(Page):
 
     def get_context(self, request):
         context = super().get_context(request)
-        context['posts'] = BlogPage.objects.live().public().order_by('-first_published_at')
+        # get all blog posts
+        posts = BlogPage.objects.live().public().order_by('-first_published_at')
+        # get page from url or default to id=1
+        page = request.GET.get('page', 1)
+        # tell paginator how many posts allowed per page
+        paginator = Paginator(posts, 2) #TODO: change to higher number
+        # paginate posts object
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
+        # add paginated posts to context
+        context['posts'] = posts
         return context
     
     content_panels = Page.content_panels + [    

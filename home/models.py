@@ -60,5 +60,6 @@ class HomePage(Page):
     def get_context(self, request):
         context = super().get_context(request)
         context["blog_index"] = BlogIndexPage.objects.first()
+        # display last 3 blog posts 
         context["blog_posts"] = BlogPage.objects.live().public().order_by("-first_published_at")[:3]
         return context

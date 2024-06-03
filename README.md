@@ -37,7 +37,10 @@ Set up virtual environment in project root directory
 
 ### TL;DR Summary of Learnings
 - set up local environment and create new wagtail app `atlas` from scratch
-- edit `atlas` app by modifying `templates/base.html` template page
+  -  Note:
+    - no models.py file exists in the atlas app, it only exists in the default home, search, and other support apps e.g blog
+    - the settings directory has all of the configuration for the atlas app
+- edit `atlas` app by modifying `templates/base.html` template page.  
 - copy paste HTML and tailwind code for homepage into *home* app  `templates/home/home_page.html` with hard coded content
 - create new `site_settings` app and register code blocks in `site_settings/models.py` to be served on all webpages from `atlas/templates/base.html`
 - personalise wagtail default home_page to your wagtail content and inject into `home/../home_page.html` template
@@ -48,6 +51,90 @@ Set up virtual environment in project root directory
 - create a Miscellaneous page type
 - add Contact page with email capabilities
 - delete unnecessary files
+
+#### imports used in models.py
+- in `site_settings/models.py`
+```
+from django.db import models
+
+from wagtail.contrib.settings.models import BaseGenericSetting, register_setting
+from wagtail.admin.panels import FieldPanel
+```
+- in `blog/models.py`
+```
+from django.db import models
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+
+from wagtail.models import Page, Orderable
+from wagtail.admin.panels import FieldPanel, InlinePanel
+from wagtail.fields import StreamField
+from wagtail import blocks
+from wagtail.images.blocks import ImageChooserBlock
+from wagtail.snippets.models import register_snippet
+
+from modelcluster.fields import ParentalKey
+```
+- in `home/models.py`
+```
+from django.db import models
+
+from wagtail.models import Page
+from wagtail.admin.panels import FieldPanel, MultiFieldPanel
+
+from blog.models import BlogIndexPage, BlogPage
+```
+- in `home/templatetags/models.py`
+```
+from django import template
+from wagtail.models import Page
+
+register = template.Library()
+```
+
+#### wagtail template code examples
+- in `atlas/templates/base.html`
+{% load static wagtailcore_tags wagtailuserbar %}
+{% block title %} ... {% endblock %}
+{% wagtail_site as current_site %}
+{% if page.seo_title %} ....{% else %} ... {% endif %}
+{% wagtailuserbar %}
+{% block navigation %}
+  {% include 'common/navigation.html' %}
+{% endblock navigation %}
+{% block content %}{% endblock %}
+{% block social_media %} 
+  {% include 'common/social_media.html' %}
+{% endblock social_media%}
+{% static 'js/main.js' %}
+- in `atlas/templates/common/navigation.html`
+{% load static navbar_tags wagtailimages_tags wagtailcore_tags %}
+{% get_navbar_pages as navbar_pages%} (loading function)
+{% wagtail_site as current_site %}
+{% image settings.site_settings.LogoSettings.logo max-48x40 %}
+{% for navbar_page in navbar_pages %} ... {% endfor %}
+- in `home/templates/home/home_page.html`
+{% extends "base.html" %}
+{% load static wagtailimages_tags %}
+{% block content %} ... {% endblock content %}
+{% static 'img/long-arrow-right.png' %}
+{% for post in blog_posts %}
+  {% include 'common/blog_preview.html' with post=post %}
+{% endfor %}
+- in `blog/templates/blog/blog_index_page.html`
+{% extends "base.html" %}
+{% load static %}
+{% block content %} ... {% endblock content %}
+{% for post in posts %}
+    {% include 'common/blog_preview.html' with post=post %}
+{% endfor %}
+{% if posts.paginator.num_pages > 1 %} ... {% endif %}
+{% for page_num in posts.paginator.page_range %} ... {% endfor %}
+- in `blog/templates/blog/blog_page.html`
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+{% block content %} ... {% endblock content %}
+{% include_block page.body %}
+{% for orderable in page.categories.all %} ... {% endfor %}
 
 ### Course
 1. & 2. Install summary
