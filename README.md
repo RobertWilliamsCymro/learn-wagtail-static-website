@@ -92,49 +92,57 @@ register = template.Library()
 ```
 
 #### wagtail template code examples
-- in `atlas/templates/base.html`
-{% load static wagtailcore_tags wagtailuserbar %}
-{% block title %} ... {% endblock %}
-{% wagtail_site as current_site %}
-{% if page.seo_title %} ....{% else %} ... {% endif %}
-{% wagtailuserbar %}
-{% block navigation %}
-  {% include 'common/navigation.html' %}
-{% endblock navigation %}
-{% block content %}{% endblock %}
-{% block social_media %} 
-  {% include 'common/social_media.html' %}
-{% endblock social_media%}
-{% static 'js/main.js' %}
-- in `atlas/templates/common/navigation.html`
-{% load static navbar_tags wagtailimages_tags wagtailcore_tags %}
-{% get_navbar_pages as navbar_pages%} (loading function)
-{% wagtail_site as current_site %}
-{% image settings.site_settings.LogoSettings.logo max-48x40 %}
-{% for navbar_page in navbar_pages %} ... {% endfor %}
-- in `home/templates/home/home_page.html`
-{% extends "base.html" %}
-{% load static wagtailimages_tags %}
-{% block content %} ... {% endblock content %}
-{% static 'img/long-arrow-right.png' %}
-{% for post in blog_posts %}
-  {% include 'common/blog_preview.html' with post=post %}
-{% endfor %}
-- in `blog/templates/blog/blog_index_page.html`
-{% extends "base.html" %}
-{% load static %}
-{% block content %} ... {% endblock content %}
-{% for post in posts %}
-    {% include 'common/blog_preview.html' with post=post %}
-{% endfor %}
-{% if posts.paginator.num_pages > 1 %} ... {% endif %}
-{% for page_num in posts.paginator.page_range %} ... {% endfor %}
-- in `blog/templates/blog/blog_page.html`
-{% extends "base.html" %}
-{% load static wagtailcore_tags %}
-{% block content %} ... {% endblock content %}
-{% include_block page.body %}
-{% for orderable in page.categories.all %} ... {% endfor %}
+in `atlas/templates/base.html`
+  - `{% load static wagtailcore_tags wagtailuserbar %}`
+  - `{% block title %} ... {% endblock %}`
+  - `{% wagtail_site as current_site %}`
+  - `{% if page.seo_title %} ....{% else %} ... {% endif %}`
+  - `{% wagtailuserbar %}`
+  - ```
+    {% block navigation %}
+      {% include 'common/navigation.html' %}
+    {% endblock navigation %}    
+  - `{% block content %}{% endblock %}`
+  - ```
+    {% block social_media %} 
+      {% include 'common/social_media.html' %}
+    {% endblock social_media%}
+  - `{% static 'js/main.js' %}`
+
+in `atlas/templates/common/navigation.html`
+  - `{% load static navbar_tags wagtailimages_tags wagtailcore_tags %}`
+  - `{% get_navbar_pages as navbar_pages%}` (loading function)
+  - `{% wagtail_site as current_site %}`
+  - `{% image settings.site_settings.LogoSettings.logo max-48x40 %}`
+  - `{% for navbar_page in navbar_pages %} ... {% endfor %}`
+
+in `home/templates/home/home_page.html`
+  - `{% extends "base.html" %}`
+  - `{% load static wagtailimages_tags %}`
+  - `{% block content %} ... {% endblock content %}`
+  - `{% static 'img/long-arrow-right.png' %}`
+  - ```
+    {% for post in blog_posts %}
+      {% include 'common/blog_preview.html' with post=post %}
+    {% endfor %}
+
+in `blog/templates/blog/blog_index_page.html`
+  - `{% extends "base.html" %}`
+  - `{% load static %}`
+  - `{% block content %} ... {% endblock content %}`
+  - ```
+    {% for post in posts %}
+      {% include 'common/blog_preview.html' with post=post %}
+    {% endfor %}
+  - `{% if posts.paginator.num_pages > 1 %} ... {% endif %}`
+  - `{% for page_num in posts.paginator.page_range %} ... {% endfor %}`
+  
+in `blog/templates/blog/blog_page.html`
+  - `{% extends "base.html" %}`
+  - `{% load static wagtailcore_tags %}`
+  - `{% block content %} ... {% endblock content %}`
+  - `{% include_block page.body %}`
+  - `{% for orderable in page.categories.all %} ... {% endfor %}`
 
 ### Course
 1. & 2. Install summary
