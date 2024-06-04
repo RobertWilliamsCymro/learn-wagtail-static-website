@@ -234,3 +234,10 @@ This is a guide to create a contact page in a Wagtail app. It involves creating 
 Provides guidance on safely deleting unused files and directories in a Django project. It suggests removing unused `admin.py`, `views.py`, `tests.py` files in certain apps, deleting `welcome_page.html` and `welcome_page.css` in `home`, and removing the `search` app entirely, with reminders to update settings and URLs.
 
 [Go to Lesson 17 learnings](Lesson-17.md)
+
+### Additional Homework
+ - Create a `projects` app
+   - create `project_index_page` and `project_page` models
+   - create `.html` template pages
+   - show 3 or 4 projects in `Homepage`
+ - Add tailwind to Contact page formatting
