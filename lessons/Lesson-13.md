@@ -30,4 +30,4 @@
         - `{{ post.title }}`
         - `{{ post.reading_time_in_minutes }}`
 
-[return to README](README.md#course)
+[return to README](../README.md#course)

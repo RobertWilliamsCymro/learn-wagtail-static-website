@@ -7,4 +7,4 @@
     - remember to also delete `"search"` app from `INSTALLED_APPS` array in `atlas/settings`
     - remeber to edit the `atlas/urls.py` file to remove reference to `search` in `urlpatterns` array
 
-[return to README](README.md#course)
+[return to README](../README.md#course)

@@ -41,4 +41,4 @@
         - edit the `All posts` link to now target `{{ blog_index.url }}` don't need `page` as using `get_context` function to access `BlogIndexPage.url` where `url` is a default field available to `Page` model class similar to `title` field
 
 
-[return to README](README.md#course)
+[return to README](../README.md#course)

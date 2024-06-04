@@ -31,4 +31,4 @@
       - `{{ page.html_subtitle|safe }}`
       - `{% include_block page.body %}`
 
-[return to README](README.md#course)
+[return to README](../README.md#course)

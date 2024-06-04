@@ -37,4 +37,4 @@
       - in `atlas/templates/blocks` create `.html` block component template files eg `richtext.html`, `image.html` etc
       - add any specific html and tailwind code to that component and inject wagtail code `{{ self }}` to use data from StreamField block type
 
-[return to README](README.md#course)
+[return to README](../README.md#course)

@@ -37,4 +37,4 @@
   - In `social_media.html`
     - repeat steps as above
 
-[return to README](README.md#course)
+[return to README](../README.md#course)

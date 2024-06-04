@@ -44,4 +44,4 @@
             - wrap in default CTA button text `{% else %} Read More &gt;&gt; {% endif %}` in frontend [`home_page.html`](home/templates/home/home_page.html) template
             - *OR* use `@property` decorator again  to provide default string such as `Read More...` if `cta_text` field not filled in for [`home/models.py`](home/models.py)
 
-[return to README](README.md#course)
+[return to README](../README.md#course)

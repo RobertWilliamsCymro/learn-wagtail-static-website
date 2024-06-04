@@ -55,4 +55,4 @@
         - add urls to the social media fields and save
       - check links are working on basepage `localhost:<port>`
 
-[return to README](README.md#course)
+[return to README](../README.md#course)

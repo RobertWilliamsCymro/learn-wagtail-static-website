@@ -24,4 +24,4 @@
     - add Previous and Next blocks either side of the page num_range
       `{% if posts.has_previous %} .. {% endif %}` & `{% if posts.has_next %} .. {% endif %}`
 
-[return to README](README.md#course)
+[return to README](../README.md#course)

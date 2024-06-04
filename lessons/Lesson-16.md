@@ -61,4 +61,4 @@
     - [widgettweaks](https://pypi.org/project/django-widget-tweaks/)
     - [django-extensions](https://pypi.org/project/django-extensions/)
 
-[return to README](README.md#course)
+[return to README](../README.md#course)

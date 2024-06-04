@@ -33,4 +33,4 @@
             - edit any `img` tags to load from `{% static 'img/...' %}` directory
             - links to `Project` pages will be update once they are built
 
-[return to README](README.md#course)
+[return to README](../README.md#course)

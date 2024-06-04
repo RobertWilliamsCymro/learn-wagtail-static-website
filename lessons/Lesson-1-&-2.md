@@ -25,4 +25,4 @@
 ## 2. Visualise project
   - create a tree hierarchy for where each webpage will exist under Home page
 
-[return to README.md](README.md#course)
+[return to README.md](../README.md#course)

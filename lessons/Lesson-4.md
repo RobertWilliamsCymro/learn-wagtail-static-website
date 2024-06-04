@@ -43,4 +43,4 @@
 
     - *REMEMBER*: any changes to `template` folder you must re-run `python manage.py runserver 0.0.0.0:<port>` cmd in terminal to pick up frontend changes
 
-[return to README](README.md#course)
+[return to README](../README.md#course)
