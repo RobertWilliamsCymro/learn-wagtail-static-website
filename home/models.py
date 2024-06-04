@@ -4,6 +4,7 @@ from wagtail.models import Page
 from wagtail.admin.panels import FieldPanel, MultiFieldPanel
 
 from blog.models import BlogIndexPage, BlogPage
+from projects.models import ProjectIndexPage
 
 
 # Create your models here.
@@ -62,4 +63,5 @@ class HomePage(Page):
         context["blog_index"] = BlogIndexPage.objects.first()
         # display last 3 blog posts 
         context["blog_posts"] = BlogPage.objects.live().public().order_by("-first_published_at")[:3]
+        context["projects_index"] = ProjectIndexPage.objects.first()
         return context

@@ -35,13 +35,18 @@ Set up virtual environment in project root directory
 - start virtual env using `pyenv activate <venv_name>` cmd
 - deactivate virtual env using `pyenv deactivate` cmd
 
+### Atlas Template
+source for static webpages: [Atlas - free TailwindCSS personal blog template](https://redpixelthemes.com/templates/atlas/)
+
 ### TL;DR Summary of Learnings
-- set up local environment and create new wagtail app `atlas` from scratch
+- using the Atlas website static template
+- set up local environment 
+- create new wagtail app `atlas` from scratch
   -  Note:
-    - no models.py file exists in the atlas app, it only exists in the default home, search, and other support apps e.g blog
-    - the settings directory has all of the configuration for the atlas app
+    - no `models.py` file exists in the atlas app, it only exists in the default `home`, `search`, and other support apps e.g `blog`
+    - the settings directory has all of the configuration for the `atlas` app
 - edit `atlas` app by modifying `templates/base.html` template page.  
-- copy paste HTML and tailwind code for homepage into *home* app  `templates/home/home_page.html` with hard coded content
+- copy paste HTML and tailwind code for homepage into `home` app  `templates/home/home_page.html` with hard coded content
 - create new `site_settings` app and register code blocks in `site_settings/models.py` to be served on all webpages from `atlas/templates/base.html`
 - personalise wagtail default home_page to your wagtail content and inject into `home/../home_page.html` template
 - create new `blog` app and set up `blog index` page, `blog` page and use a StreamField and StructBlock to mix and match content types in the body
@@ -240,4 +245,6 @@ Provides guidance on safely deleting unused files and directories in a Django pr
    - create `project_index_page` and `project_page` models
    - create `.html` template pages
    - show 3 or 4 projects in `Homepage`
- - Add tailwind to Contact page formatting
+ - Add tailwind classes to style Contact page 
+  - create a default `form_fields/.html` template for each of the form fields that can be used
+  - 

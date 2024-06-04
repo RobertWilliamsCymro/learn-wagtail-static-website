@@ -12,6 +12,7 @@ from modelcluster.fields import ParentalKey
 
 # Create your models here.
 
+# Handle multiple blog category labels on each blog post
 # Snippet is a model that can be used to create a reusable piece of content
 @register_snippet
 class BlogCategory(models.Model):
@@ -50,6 +51,7 @@ class BlogPageCategory(Orderable):
     ]
 
 
+# Blog Page model
 class BlogPage(Page):
     parent_page_types = ['blog.BlogIndexPage']
     #subpage_types = [] # TODO
@@ -82,6 +84,7 @@ class BlogPage(Page):
     ]
 
 
+# Blog Index Page model
 class BlogIndexPage(Page):
     max_count = 1
     subpage_types = ['blog.BlogPage']
