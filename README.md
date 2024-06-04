@@ -57,6 +57,10 @@ source for static webpages: [Atlas - free TailwindCSS personal blog template](ht
 - add Contact page with email capabilities, add PyPi packages like [widgettweaks](https://pypi.org/project/django-widget-tweaks/) and [django-extensions](https://pypi.org/project/django-extensions/) for more control.
 - delete unnecessary files
 
+#### diagram of html templates
+
+![Image of .html page structure](diagram.png)
+
 #### imports used in models.py
 - in `site_settings/models.py`
 ```
