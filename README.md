@@ -49,7 +49,7 @@ Set up virtual environment in project root directory
 - reuse Template components across pages
 - add Pagination
 - create a Miscellaneous page type
-- add Contact page with email capabilities
+- add Contact page with email capabilities, add PyPi packages like [widgettweaks](https://pypi.org/project/django-widget-tweaks/) and [django-extensions](https://pypi.org/project/django-extensions/) for more control.
 - delete unnecessary files
 
 #### imports used in models.py
