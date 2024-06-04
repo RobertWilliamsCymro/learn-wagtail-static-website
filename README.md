@@ -225,7 +225,7 @@ Provides instructions to create a new Wagtail app called `misc` and update `atla
 
 16. Add a Contact page with email capabilities
 
-Provides ...
+This is a step-by-step guide to create a Contact Page in a Wagtail app. It involves creating a new `contact` app, defining models, setting up templates, and handling form submissions. It also suggests adding packages like [widgettweaks](https://pypi.org/project/django-widget-tweaks/) and [django-extensions](https://pypi.org/project/django-extensions/) for more control.
 
 [Go to Lesson 16 learnings](Lesson-16.md)
 
