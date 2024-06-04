@@ -54,6 +54,9 @@
     - copy the img `src="{% static 'img/...' %}"` and h1 `{{ page.title }}` fields
     - add `{{ page.thank_you_text }}`
 
+  - DATA PROTECTION warning!!
+   - when someones submits a form a `Forms` panel on the wgtail admin UI is generated and it shows the details of the form submitter
+
   - look at adding pypi packages for more control
     - [widgettweaks](https://pypi.org/project/django-widget-tweaks/)
     - [django-extensions](https://pypi.org/project/django-extensions/)
