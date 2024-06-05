@@ -62,7 +62,6 @@
         </div>
     </div>
     {% comment %} My Projects section {% endcomment %}
-    <hr>OLD CODE<hr>
     <div class="pb-16 lg:pb-20">
         <div class="flex items-center pb-6">
             <img src="{% static 'img/icon-project.png' %}" alt="icon story" />
@@ -76,65 +75,22 @@
             </a>
         </div>
         <div>
-            <a href="TODO: ADD LINK TO ../projects/" 
+            {% for project in projects_list %}
+            <a href="{{ project.url }}" 
                 class="mb-6 flex items-center justify-between border border-grey-lighter px-4 py-4 sm:px-6" >
                 <span class="w-9/10 pr-8">
-                    <h4 class="font-body text-lg font-semibold text-primary dark:text-white" >
-                        TailwindCSS
+                    <h4 class="font-body text-lg font-semibold text-primary dark:text-white hover:text-green dark:text-white dark:hover:text-secondary" >
+                        {{ project.title }}
                     </h4>
                     <p class="font-body font-light text-primary dark:text-white">
-                        Rapidly build modern websites without ever leaving your HTML.
+                        {{ project.summary }}
                     </p>
                 </span>
                 <span class="w-1/10">
                     <img src="{% static 'img/chevron-right.png' %}" class="mx-auto" alt="chevron right" />
                 </span>
             </a>
-            
-            <a href="TODO: ADD LINK TO ../projects/" 
-                class="mb-6 flex items-center justify-between border border-grey-lighter px-4 py-4 sm:px-6" >
-                <span class="w-9/10 pr-8">
-                    <h4 class="font-body text-lg font-semibold text-primary dark:text-white" >
-                        Maizzle
-                    </h4>
-                    <p class="font-body font-light text-primary dark:text-white">
-                        Framework for Rapid Email Prototyping
-                    </p>
-                </span>
-                <span class="w-1/10">
-                    <img src="{% static 'img/chevron-right.png' %}" class="mx-auto" alt="chevron right" />
-                </span>
-            </a>
-            
-            <a href="TODO: ADD LINK TO ../projects/" 
-                class="mb-6 flex items-center justify-between border border-grey-lighter px-4 py-4 sm:px-6" >
-                <span class="w-9/10 pr-8">
-                    <h4 class="font-body text-lg font-semibold text-primary dark:text-white" >
-                        Alpine.js
-                    </h4>
-                    <p class="font-body font-light text-primary dark:text-white">
-                        Think of it like Tailwind for JavaScript.
-                    </p>
-                </span>
-                <span class="w-1/10">
-                    <img src="{% static 'img/chevron-right.png' %}" class="mx-auto" alt="chevron right" />
-                </span>
-            </a>
-            
-            <a href="TODO: ADD LINK TO ../projects/" 
-                class="mb-6 flex items-center justify-between border border-grey-lighter px-4 py-4 sm:px-6" >
-                <span class="w-9/10 pr-8">
-                    <h4 class="font-body text-lg font-semibold text-primary dark:text-white" >
-                        PostCSS
-                    </h4>
-                    <p class="font-body font-light text-primary dark:text-white">
-                        A tool for transforming CSS with JavaScript
-                    </p>
-                </span>
-                <span class="w-1/10">
-                    <img src="{% static 'img/chevron-right.png' %}" class="mx-auto" alt="chevron right" />
-                </span>
-            </a>
+            {% endfor %}
         </div>
     </div>
 </div>

@@ -21,7 +21,8 @@ class ProjectPage(Page):
         ("content", blocks.RichTextBlock(
             features=["bold", "italic", "link", "ol", "ul", "hr"],
             template="blocks/richtext.html")),
-        ("image", ImageChooserBlock(template="blocks/image.html")),
+        ("image", ImageChooserBlock(
+            template="blocks/image.html")),
     ])
 
     content_panels = Page.content_panels + [
@@ -36,14 +37,15 @@ class ProjectIndexPage(Page):
     parent_page_types = ["home.HomePage"]
 
     # title - comes with Page model
+    # date - comes with Page model
     summary = models.TextField(blank=True, max_length=500)
 
     def get_context(self, request):
         context = super().get_context(request)
         # get all project pages posts
-        projects = ProjectPage.objects.live().public().order_by("-first_published_at")
+        projects = ProjectPage.objects.live().public().order_by("title")
         # get page from url or default to id=1
-        page = request.GET.get("projects", 1)
+        page = request.GET.get('page', 1)
         # tell paginator how many projects allowed per page
         paginator = Paginator(projects, 2)  # TODO: change to higher number
         # paginate projects object

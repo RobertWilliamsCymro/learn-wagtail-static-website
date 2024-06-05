@@ -248,7 +248,7 @@ Provides guidance on safely deleting unused files and directories in a Django pr
  - Create a `projects` app
    - create `project_index_page` and `project_page` models
    - create `.html` template pages
-   - show 3 or 4 projects in `Homepage`
+   - show 3 or projects on `Homepage` under `My Projects`
  - Add tailwind classes to style Contact page 
-  - create a default `form_fields/.html` template for each of the form fields that can be used
+  - create a default `form_fields/<field_name>.html` template for each of the form fields
   - 
