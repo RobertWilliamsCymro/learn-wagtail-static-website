@@ -252,4 +252,9 @@ Provides guidance on safely deleting unused files and directories in a Django pr
  - Add tailwind classes to style Contact page form
    - create a new `atlas/templates/form_fields` directory 
    - create default `<form_field_name>.html` template for each of the form fields
-   - add custom form_field styles to `contact/models.py` to overwrite default form field rendering :TODO: not working yet
+   - add custom form_field styles 
+      - went down rabbit hole trying to customise on `contact/models.py` to overwrite default form field rendering
+        - tried writing a `form_field_templates` array and using `get_context` function ❌
+        - tried creating `contact/templatetags` folder with `zip.py` file to loop over 2 for loops `field` in `form` and `template` in field ❌
+        - customised `formfield_for_dbfield` django function ❌
+      - realised simpler solution was available in python package [django-widget-tweaks](https://pypi.org/project/django-widget-tweaks/)
