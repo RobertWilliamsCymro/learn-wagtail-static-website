@@ -45,11 +45,15 @@ source for static webpages: [Atlas - free TailwindCSS personal blog template](ht
 
 ### TL;DR Summary of Learnings
 - using the Atlas website static template
-- set up local environment 
-- create new wagtail app `atlas` from scratch
+- start up local pyenv environment 
+- create a wagtail framework for your website app, with the name you want it to have, in this case `atlas`
+- create your main app in root folder with `wagtail start atlas .` 
+- generates standard wagtail folders
+- run `pip install -r requirements.txt`
+- run `./manage.py migrate` to set up default database for `atlas`
   -  Note:
-    - no `models.py` file exists in the atlas app, it only exists in the default `home`, `search`, and other support apps e.g `blog`
-    - the settings directory has all of the configuration for the `atlas` app
+    - no `models.py` file exists in the `atlas` app, it only exists in the default `home`, `search`, and other future support apps e.g `blog`
+    - the `settings` directory has all of the configuration for the `atlas` app
 - edit `atlas` app by modifying `templates/base.html` template page.  
 - copy paste HTML and tailwind code for homepage into `home` app  `templates/home/home_page.html` with hard coded content
 - create new `site_settings` app and register code blocks in `site_settings/models.py` to be served on all webpages from `atlas/templates/base.html`
