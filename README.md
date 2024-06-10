@@ -258,3 +258,5 @@ Provides guidance on safely deleting unused files and directories in a Django pr
         - tried creating `contact/templatetags` folder with `zip.py` file to loop over 2 for loops `field` in `form` and `template` in field ❌
         - customised `formfield_for_dbfield` django function ❌
       - realised simpler solution was available in python package [django-widget-tweaks](https://pypi.org/project/django-widget-tweaks/)
+      - made a right mess of implementing it so created a clean copy of the original static coed in `temporary.html` and applied the 
+      widget tweaks `render_field` function to it after installing package via `pip install django-widget-tweaks` ✅

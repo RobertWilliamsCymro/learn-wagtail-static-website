@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static wagtailcore_tags %}
 {% load zip %}
+{% load widget_tweaks %}
 
 {% block content %}
     <div class="py-16 lg:py-20">
@@ -23,12 +24,15 @@
                 
                 {% for field in form %}
                     <div class="w-full mt-2 sm:mr-3 sm:w-1/2">
-                        {% if field.field.widget.input_type == "text" %}
-                            {% include "form_fields/single_line_text.html" with field=field %}
-                        {% elif field.field.widget.input_type == "email" %}
-                            {% include "form_fields/email.html" with field=field %}
-                        {% elif field.field.widget.input_type == "textarea" %}
-                            {% include "form_fields/multi_line_text.html" with field=field %}
+                        {% if field.label_tag == "Your Name" %}
+                            {% render_field field placeholder="name" class="w-full border border-primary bg-grey-lightest px-5 py-4 font-body font-light text-primary placeholder-primary transition-colors focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary dark:text-white"%}
+                        {% comment %} {% include "form_fields/single_line_text.html" with field=field %} {% endcomment %}
+                        {% elif field.label_tag == "Your Email" %}
+                            {% render_field field placeholder="email" class="w-full border border-primary bg-grey-lightest px-5 py-4 font-body font-light text-primary placeholder-primary transition-colors focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary dark:text-white"%}
+                            {% comment %} {% include "form_fields/email.html" with field=field %} {% endcomment %}
+                        {% elif field.label_tag == "Your Message" %}
+                            {% render_field field placeholder="message" class="w-full border border-primary bg-grey-lightest px-5 py-4 font-body font-light text-primary placeholder-primary transition-colors focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary dark:text-white"%}
+                            {% comment %} {% include "form_fields/multi_line_text.html" with field=field %} {% endcomment %}
                         {% endif %}
                     </div>
                 {% endfor %}
