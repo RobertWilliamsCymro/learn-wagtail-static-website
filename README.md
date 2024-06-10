@@ -29,11 +29,13 @@ $ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 Set python preferred version in project root directory 
 - add python version 3.11.4 using `pyenv install 3.11.4` cmd 
 - set this project directory to use v3.10 with `pyenv local 3.11.4` cmd
+
 Set up virtual environment in project root directory
 - create vitual env using `pyenv virtualenv <venv_name>` cmd
 - list all virtual envs with `pyenv virtualenvs` cmd
 - start virtual env using `pyenv activate <venv_name>` cmd
 - deactivate virtual env using `pyenv deactivate` cmd
+
 Install Wagtail
 - install wagtail in virtual environment using `pip install wagtail`
 - check installed using `pip show wagtail`
