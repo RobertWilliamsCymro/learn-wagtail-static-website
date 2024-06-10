@@ -34,6 +34,9 @@ Set up virtual environment in project root directory
 - list all virtual envs with `pyenv virtualenvs` cmd
 - start virtual env using `pyenv activate <venv_name>` cmd
 - deactivate virtual env using `pyenv deactivate` cmd
+Install Wagtail
+- install wagtail in virtual environment using `pip install wagtail`
+- check installed using `pip show wagtail`
 
 ### Atlas Template
 source for static webpages: [Atlas - free TailwindCSS personal blog template](https://redpixelthemes.com/templates/atlas/)
