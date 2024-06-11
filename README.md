@@ -66,7 +66,7 @@ source for static webpages: [Atlas - free TailwindCSS personal blog template](ht
 - add Contact page with email capabilities, add PyPi packages like [widgettweaks](https://pypi.org/project/django-widget-tweaks/) and [django-extensions](https://pypi.org/project/django-extensions/) for more control.
 - delete unnecessary files
 
-#### Apps created as part of this wagtail project
+#### apps created as part of this wagtail project
 - initial app `atlas`
 - comes with `home` and `search`
 - added functionality through
