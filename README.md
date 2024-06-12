@@ -63,7 +63,7 @@ source for static webpages: [Atlas - free TailwindCSS personal blog template](ht
 - reuse Template components across pages
 - add Pagination
 - create a Miscellaneous page type
-- add Contact page with email capabilities, add PyPi packages like [widgettweaks](https://pypi.org/project/django-widget-tweaks/) and [django-extensions](https://pypi.org/project/django-extensions/) for more control.
+- add Contact page with email capabilities, add PyPi packages like [widget tweaks](https://pypi.org/project/django-widget-tweaks/) and [django-extensions](https://pypi.org/project/django-extensions/) for more control.
 - delete unnecessary files
 
 #### apps created as part of this wagtail project
