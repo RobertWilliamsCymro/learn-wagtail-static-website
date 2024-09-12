@@ -4,14 +4,15 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <meta name="keywords" content="atlas, blog">
         <title>
             {% block title %}
             {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
-            {% endblock %}
+            {% endblock title %}
             {% block title_suffix %}
             {% wagtail_site as current_site %}
             {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
-            {% endblock %}
+            {% endblock title_suffix %}
         </title>
         {% if page.search_description %}
         <meta name="description" content="{{ page.search_description }}" />
@@ -34,7 +35,7 @@
 
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
-        {% endblock %}
+        {% endblock extra_css %}
 
     </head>
 
@@ -46,20 +47,16 @@
             <div class="container mx-auto">
                 
                 {% block navigation %}
-                    {% include 'common/navigation.html' %}
+                    {% include "common/navigation.html" %}
                 {% endblock navigation %}
 
-                {% block content %}{% endblock %}
-
+                {% block content %}{% endblock content %}
 
                 <!-- Footer -->
                 {% block social_media %} 
-                    {% include 'common/social_media.html' %}
-                {% endblock social_media%}
-
-
-
-
+                    {% include "common/social_media.html" %}
+                {% endblock social_media %}
+                <!-- End Footer -->
             </div>
         </div>
 
@@ -69,6 +66,6 @@
 
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}
-        {% endblock %}
+        {% endblock extra_js %}
     </body>
 </html>

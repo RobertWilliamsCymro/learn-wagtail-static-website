@@ -28,7 +28,7 @@ $ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 ### Set-up
 Set python preferred version in project root directory 
 - add python version 3.11.4 using `pyenv install 3.11.4` cmd 
-- set this project directory to use v3.10 with `pyenv local 3.11.4` cmd
+- set this project directory to use v3.11.4 with `pyenv local 3.11.4` cmd
 
 Set up virtual environment in project root directory
 - create vitual env using `pyenv virtualenv <venv_name>` cmd
@@ -53,7 +53,7 @@ source for static webpages: [Atlas - free TailwindCSS personal blog template](ht
 - run `./manage.py migrate` to set up default database for `atlas`
   -  Note:
     - no `models.py` file exists in the `atlas` app, it only exists in the default `home`, `search`, and other future support apps e.g `blog`
-    - the `settings` directory has all of the configuration for the `atlas` app
+    - the `atlas/settings` directory has all of the configuration for the `atlas` app
 - edit `atlas` app by modifying `templates/base.html` template page.  
 - copy paste HTML and tailwind code for homepage into `home` app  `templates/home/home_page.html` with hard coded content
 - create new `site_settings` app and register code blocks in `site_settings/models.py` to be served on all webpages from `atlas/templates/base.html`
@@ -63,7 +63,10 @@ source for static webpages: [Atlas - free TailwindCSS personal blog template](ht
 - reuse Template components across pages
 - add Pagination
 - create a Miscellaneous page type
-- add Contact page with email capabilities, add PyPi packages like [widget tweaks](https://pypi.org/project/django-widget-tweaks/) and [django-extensions](https://pypi.org/project/django-extensions/) for more control.
+- add Contact page with email capabilities, 
+- for more control add PyPi packages like
+  - [widget tweaks](https://pypi.org/project/django-widget-tweaks/)
+  - [django-extensions](https://pypi.org/project/django-extensions/)
 - delete unnecessary files
 
 #### apps created as part of this wagtail project
@@ -72,12 +75,19 @@ source for static webpages: [Atlas - free TailwindCSS personal blog template](ht
 - added functionality through
   - `site_settings` (configures items to appear on every page)
   - `blog` (blog index page and blog page)
-  - `contact` (contact page with email form and conttact landing page)
+  - `contact` (contact page with email form and contact landing page)
   - `misc` (generic page)
   - `projects` (similar to blog but for projects)
 
+#### PyPi packages installed as extras in terminal 
+- pip install django-widget-tweaks
+- python -m pip install -U djlint
 
-#### diagram of html templates
+#### How to use djLint for formatting
+-  this is a beta tool
+- in terminal run `djlint . --check`
+
+#### Diagram of html templates interaction
 
 ![Image of .html page structure](diagram.png)
 
