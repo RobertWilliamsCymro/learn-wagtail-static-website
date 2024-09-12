@@ -1,13 +1,13 @@
 {% load static navbar_tags wagtailimages_tags wagtailcore_tags %}
 
-{% get_navbar_pages as navbar_pages%}
+{% get_navbar_pages as navbar_pages %}
 
 {% wagtail_site as current_site %}
 
 <!-- Logo & Website name -->
 <div class="flex items-center justify-between py-6 lg:py-10">
-    <a href="/" class="flex items-center">
-        <span href="/" class="mr-2">
+    <a href="{% url "home" %}" class="flex items-center">
+        <span href="{% url "home" %}" class="mr-2">
             {% image settings.site_settings.LogoSettings.logo max-48x40 %}
         </span>
         <p class="hidden font-body text-2xl font-bold text-primary dark:text-white lg:block" >
@@ -70,12 +70,12 @@
 
         <ul class="mt-8 flex flex-col">
             {% for navbar_page in navbar_pages %}
-            <li class="">
+            <li>
                 <a
                     href="{{ navbar_page.url }}"
                     class="mb-3 block px-2 font-body text-lg font-medium text-white"
                 >
-                    {{navbar_page.title}}
+                    {{ navbar_page.title }}
                 </a>
             </li>
             {% endfor %}

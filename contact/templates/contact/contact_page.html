@@ -17,7 +17,7 @@
             </p>
         </div>
 
-        <form class="pt-10" action="{% pageurl page %}" method="POST">
+        <form class="pt-10" action="{% pageurl page %}" method="post">
             {% csrf_token %}
             {% comment %} <div class="flex flex-col sm:flex-row">  {% endcomment %}
                 {% comment %} pypi packages widgettweaks also django-extensions allow more form control {% endcomment %}

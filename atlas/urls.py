@@ -7,12 +7,14 @@ from wagtail import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
 from search import views as search_views
+from atlas.views import home_view  # Import the home_view function from views.py
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("admin/", include(wagtailadmin_urls)),
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
+    path("", home_view, name="home"), # Map root URL "/" to the home_view function so it can be used with the tag {% url 'home' %} in templates
 ]
 
 

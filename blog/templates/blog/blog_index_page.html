@@ -21,7 +21,7 @@
 
         {% if page.suscribe_url %}
         <form class="flex flex-col py-12 sm:flex-row" 
-            method="POST"
+            method="post"
             action="{{ page.suscribe_url }}">
             <input
                 type="email"
@@ -42,7 +42,7 @@
         {% comment %} Blog preview  {% endcomment %}
         <div class="pt-8 lg:pt-12">
             {% for post in posts %}
-                {% include 'common/blog_preview.html' with post=post %}
+                {% include "common/blog_preview.html" with post=post %}
             {% endfor %}
         </div>
 
