@@ -13,7 +13,7 @@
             {{ page.title }}
         </h1>
         <p class="pt-3 font-body text-xl font-light text-primary dark:text-white">
-            {{page.summary}}
+            {{ page.summary }}
         </p>
         {% if page.cta_link %}
             <a href="{{ page.cta_link }}" 
@@ -57,7 +57,7 @@
         <div class="pt-8">
             {% comment %} iterate through and post last 3 published blog posts {% endcomment %}
             {% for post in blog_posts %}
-                {% include 'common/blog_preview.html' with post=post %}
+                {% include "common/blog_preview.html" with post=post %}
             {% endfor %}
         </div>
     </div>
