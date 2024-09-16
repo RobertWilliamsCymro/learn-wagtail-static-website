@@ -50,6 +50,9 @@ source for static webpages: [Atlas - free TailwindCSS personal blog template](ht
 - create your main app in root folder with `wagtail start atlas .` 
 - generates standard wagtail folders
 - run `pip install -r requirements.txt`
+- current wagtail admin UI login is
+    - name `clare`
+    - password `clare`
 - run `./manage.py migrate` to set up default database for `atlas`
   -  Note:
     - no `models.py` file exists in the `atlas` app, it only exists in the default `home`, `search`, and other future support apps e.g `blog`
