@@ -78,7 +78,7 @@ source for static webpages: [Atlas - free TailwindCSS personal blog template](ht
   - `contact` (contact page with email form and contact landing page)
   - `misc` (generic page)
   - `projects` (similar to blog but for projects)
-- [see a folder tree](atlas_folder_map.txt) of the wagtail atlas project 
+- [see the project folder tree](wagtail-static-site-folder-map.txt) 
 
 #### PyPi packages installed as extras in terminal 
 - pip install django-widget-tweaks

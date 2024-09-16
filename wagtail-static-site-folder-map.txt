@@ -1,0 +1,284 @@
+learn-wagtail-static-website
+├── Dockerfile
+├── README.md
+├── atlas
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── urls.cpython-311.pyc
+│   │   ├── views.cpython-311.pyc
+│   │   └── wsgi.cpython-311.pyc
+│   ├── settings
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-311.pyc
+│   │   │   ├── base.cpython-311.pyc
+│   │   │   └── dev.cpython-311.pyc
+│   │   ├── base.py
+│   │   ├── dev.py
+│   │   └── production.py
+│   ├── static
+│   │   ├── img
+│   │   │   ├── author.png
+│   │   │   ├── chevron-right.png
+│   │   │   ├── favicon.png
+│   │   │   ├── icon-blog.png
+│   │   │   ├── icon-codepen.png
+│   │   │   ├── icon-codepen.svg
+│   │   │   ├── icon-contact.png
+│   │   │   ├── icon-github.png
+│   │   │   ├── icon-github.svg
+│   │   │   ├── icon-linkedin.png
+│   │   │   ├── icon-linkedin.svg
+│   │   │   ├── icon-post.png
+│   │   │   ├── icon-project.png
+│   │   │   ├── icon-story.png
+│   │   │   ├── icon-uses.png
+│   │   │   ├── logo-r.svg
+│   │   │   ├── logo.svg
+│   │   │   ├── long-arrow-right.png
+│   │   │   ├── post-image-01.png
+│   │   │   └── social.jpg
+│   │   ├── js
+│   │   │   └── main.js
+│   │   └── styles
+│   │       ├── main.css
+│   │       └── main.min.css
+│   ├── templates
+│   │   ├── 404.html
+│   │   ├── 500.html
+│   │   ├── base.html
+│   │   ├── blocks
+│   │   │   ├── image.html
+│   │   │   ├── quote.html
+│   │   │   ├── richtext.html
+│   │   │   └── twitter_block.html
+│   │   ├── common
+│   │   │   ├── blog_preview.html
+│   │   │   ├── navigation.html
+│   │   │   ├── project_preview.html
+│   │   │   └── social_media.html
+│   │   └── form_fields
+│   │       ├── email.html
+│   │       ├── multi_line_text.html
+│   │       └── single_line_text.html
+│   ├── urls.py
+│   └── wsgi.py
+├── atlas_folder_map.txt
+├── blog
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── admin.cpython-311.pyc
+│   │   ├── apps.cpython-311.pyc
+│   │   └── models.cpython-311.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_blogpage.py
+│   │   ├── 0003_blogcategory.py
+│   │   ├── 0004_alter_blogcategory_options_blogpagecategory.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-311.pyc
+│   │       ├── 0002_blogpage.cpython-311.pyc
+│   │       ├── 0003_blogcategory.cpython-311.pyc
+│   │       ├── 0004_alter_blogcategory_options_blogpagecategory.cpython-311.pyc
+│   │       └── __init__.cpython-311.pyc
+│   ├── models.py
+│   ├── templates
+│   │   └── blog
+│   │       ├── blog_index_page.html
+│   │       └── blog_page.html
+│   ├── tests.py
+│   └── views.py
+├── contact
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── admin.cpython-311.pyc
+│   │   ├── apps.cpython-311.pyc
+│   │   └── models.cpython-311.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-311.pyc
+│   │       └── __init__.cpython-311.pyc
+│   ├── models.py
+│   ├── templates
+│   │   └── contact
+│   │       ├── contact_page.html
+│   │       ├── contact_page_landing.html
+│   │       ├── temporary.html
+│   │       └── temporary_landing.html
+│   ├── templatetags
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-311.pyc
+│   │   │   └── zip.cpython-311.pyc
+│   │   └── zip.py
+│   ├── tests.py
+│   └── views.py
+├── db.sqlite3
+├── diagram.png
+├── home
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-311.pyc
+│   │   └── models.cpython-311.pyc
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_create_homepage.py
+│   │   ├── 0003_homepage_author_image_homepage_summary.py
+│   │   ├── 0004_homepage_cta_page_homepage_cta_text_homepage_cta_url.py
+│   │   ├── 0005_alter_homepage_cta_text.py
+│   │   ├── 0006_homepage_my_story_content_homepage_my_story_title.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-311.pyc
+│   │       ├── 0002_create_homepage.cpython-311.pyc
+│   │       ├── 0003_homepage_author_image_homepage_summary.cpython-311.pyc
+│   │       ├── 0004_homepage_cta_page_homepage_cta_text_homepage_cta_url.cpython-311.pyc
+│   │       ├── 0005_alter_homepage_cta_text.cpython-311.pyc
+│   │       ├── 0006_homepage_my_story_content_homepage_my_story_title.cpython-311.pyc
+│   │       └── __init__.cpython-311.pyc
+│   ├── models.py
+│   ├── static
+│   │   └── css
+│   │       └── welcome_page.css
+│   ├── templates
+│   │   └── home
+│   │       ├── home_page.html
+│   │       └── welcome_page.html
+│   └── templatetags
+│       ├── __init__.py
+│       ├── __pycache__
+│       │   ├── __init__.cpython-311.pyc
+│       │   └── navbar_tags.cpython-311.pyc
+│       └── navbar_tags.py
+├── lessons
+│   ├── Lesson-1-&-2.md
+│   ├── Lesson-10-&-11.md
+│   ├── Lesson-12.md
+│   ├── Lesson-13.md
+│   ├── Lesson-14.md
+│   ├── Lesson-15.md
+│   ├── Lesson-16.md
+│   ├── Lesson-17.md
+│   ├── Lesson-3.md
+│   ├── Lesson-4.md
+│   ├── Lesson-5.md
+│   ├── Lesson-6.md
+│   ├── Lesson-7.md
+│   ├── Lesson-8.md
+│   └── Lesson-9.md
+├── manage.py
+├── media
+│   ├── images
+│   │   ├── Topbox-background-558377_1.2e16d0ba.fill-800x440.jpg
+│   │   ├── Topbox-background-558377_1.max-165x165.jpg
+│   │   ├── default-staff-profile.2e16d0ba.fill-64x64.jpg
+│   │   ├── default-staff-profile.max-165x165.jpg
+│   │   ├── digifest-2023-topbox-image.original.2e16d0ba.fill-64x64.png
+│   │   ├── digifest-2023-topbox-image.original.max-165x165.png
+│   │   ├── process-abstract.2e16d0ba.fill-64x64.jpg
+│   │   ├── process-abstract.max-165x165.jpg
+│   │   ├── process-abstract.max-48x40.jpg
+│   │   ├── public-sector-customer-banner.2e16d0ba.fill-800x440.png
+│   │   ├── public-sector-customer-banner.max-165x165.png
+│   │   ├── research-innovation-showcase-page-.2e16d0ba.fill-800x440.jpg
+│   │   ├── research-innovation-showcase-page-podcast-sl.max-165x165.jpg
+│   │   ├── students-talking-in-front-of-lapto.2e16d0ba.fill-800x440.jpg
+│   │   └── students-talking-in-front-of-laptops.max-165x165.jpg
+│   └── original_images
+│       ├── Topbox-background-558377_1.jpeg
+│       ├── default-staff-profile.jpeg
+│       ├── digifest-2023-topbox-image.original.png
+│       ├── process-abstract.jpg
+│       ├── public-sector-customer-banner.png
+│       ├── research-innovation-showcase-page-podcast-slice.jpg
+│       └── students-talking-in-front-of-laptops.jpg
+├── misc
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── admin.cpython-311.pyc
+│   │   ├── apps.cpython-311.pyc
+│   │   └── models.cpython-311.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_alter_miscpage_body.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-311.pyc
+│   │       ├── 0002_alter_miscpage_body.cpython-311.pyc
+│   │       └── __init__.cpython-311.pyc
+│   ├── models.py
+│   ├── templates
+│   │   └── misc
+│   │       └── misc_page.html
+│   ├── tests.py
+│   └── views.py
+├── projects
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── admin.cpython-311.pyc
+│   │   ├── apps.cpython-311.pyc
+│   │   └── models.cpython-311.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-311.pyc
+│   │       └── __init__.cpython-311.pyc
+│   ├── models.py
+│   ├── templates
+│   │   └── projects
+│   │       ├── project_index_page.html
+│   │       └── project_page.html
+│   ├── tests.py
+│   └── views.py
+├── requirements.txt
+├── search
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-311.pyc
+│   │   └── views.cpython-311.pyc
+│   ├── templates
+│   │   └── search
+│   │       └── search.html
+│   └── views.py
+├── site_settings
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── admin.cpython-311.pyc
+│   │   ├── apps.cpython-311.pyc
+│   │   └── models.cpython-311.pyc
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_rename_footerlinks_socialmedialinks.py
+│   │   ├── 0003_logosettings.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── 0001_initial.cpython-311.pyc
+│   │       ├── 0002_rename_footerlinks_socialmedialinks.cpython-311.pyc
+│   │       ├── 0003_logosettings.cpython-311.pyc
+│   │       └── __init__.cpython-311.pyc
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+└── wagtail-static-site-folder-map.txt
+
+61 directories, 221 files
